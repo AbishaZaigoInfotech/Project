@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    // return redirect('about');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+//     // return redirect('about');
+// });
 
 // Passing data with routing
 
-// Route::get('/{name}', function ($name) {
-//     return view('welcome', ['name'=>$name]);
-// });
+Route::get('/{name}', function ($name) {
+    return view('welcome', ['name'=>$name]);
+});
 
 Route :: view('about', 'about');
 
