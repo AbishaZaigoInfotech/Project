@@ -10,6 +10,7 @@ class ageCheck
     /**
      * global - complete websit at a time
      * grouped - specific routes at a time
+     * route - specific single route at a time
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request

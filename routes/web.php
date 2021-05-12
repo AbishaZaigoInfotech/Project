@@ -34,10 +34,11 @@ Route :: view('about', 'about');
 Route::get('/contact', function () {
     return view('contact');
 });
-
+Route :: view('user', 'user')->middleware('protectedPages');
 Route :: view('home', 'home');
 Route :: view('noaccess', 'noaccess');
 
-Route::group(['middleware'=>['protectedPages']], function(){
-    Route :: view('user', 'user');
-});
+// Grouped middleware
+// Route::group(['middleware'=>['protectedPages']], function(){
+//     Route :: view('user', 'user');
+// });

@@ -44,9 +44,9 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        'protectedPages' => [
-            \App\Http\Middleware\ageCheck::class,
-        ]
+        // 'protectedPages' => [
+        //     \App\Http\Middleware\ageCheck::class,
+        // ]
     ];
 
     /**
@@ -57,6 +57,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'protectedPages' => \App\Http\Middleware\ageCheck::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
