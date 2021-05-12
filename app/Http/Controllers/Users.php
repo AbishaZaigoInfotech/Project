@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 class Users extends Controller
 {
     //
-    public function index ($user){
-        echo $user;
-        echo "Hello from controller";
-        return ['name' => 'Abi', 'age' => '25'];
+    function viewLoad(){
+        return view('users',['user' =>'peter']);
     }
 }

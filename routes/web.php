@@ -26,10 +26,11 @@ Route::get('/', function () {
 //     return view('welcome', ['name'=>$name]);
 // });
 
-Route :: get('users/{user}', [Users::class, 'index']);
+Route :: get('users',[Users::class,'viewLoad']);
+Route :: view('login','users');
 
-Route :: view('about', 'about');
+// Route :: view('about', 'about');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
