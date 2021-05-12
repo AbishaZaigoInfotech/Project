@@ -34,3 +34,7 @@ Route :: view('about', 'about');
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route :: view('user', 'user');
+Route :: view('home', 'home');
+Route :: view('noaccess', 'noaccess');
