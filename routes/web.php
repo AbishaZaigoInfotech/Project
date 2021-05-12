@@ -35,6 +35,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route :: view('user', 'user');
 Route :: view('home', 'home');
 Route :: view('noaccess', 'noaccess');
+
+Route::group(['middleware'=>['protectedPages']], function(){
+    Route :: view('user', 'user');
+});

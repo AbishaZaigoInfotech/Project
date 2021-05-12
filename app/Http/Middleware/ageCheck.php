@@ -9,6 +9,7 @@ class ageCheck
 {
     /**
      * global - complete websit at a time
+     * grouped - specific routes at a time
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
