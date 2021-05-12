@@ -1,13 +1,12 @@
 <h1>User Page</h1>
+@include('about')
 
-@if($user=='anil')
-<h3>Hi {{$user}}</h3>
-@elseif($user=='sam')
-<h3>Hello {{$user}}</h3>
-@else
-<h3>Unknown user</h3>
-@endif
+@foreach ($users as $item)
+<h3>{{$item}}</h3>
+@endforeach
 
-@for($i=0; $i<10; $i++)
-<h1>{{$i}}</h1>
-@endfor
+@csrf
+<script>
+var data=@json($users);
+console.warn(data);
+</script>

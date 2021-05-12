@@ -27,10 +27,9 @@ Route::get('/', function () {
 // });
 
 Route :: get('users',[Users::class,'viewLoad']);
-Route :: view('login','users');
 
-// Route :: view('about', 'about');
+Route :: view('about', 'about');
 
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
