@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Users;
 
+use App\Http\Controllers\userController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,15 +28,18 @@ Route::get('/', function () {
 //     return view('welcome', ['name'=>$name]); 
 // });
 
-Route :: post('users',[Users::class,'getData']);
-Route :: view('login', 'users');
+// Route :: post('users',[Users::class,'index']);
+// Route :: view('login', 'users');
+
+Route :: get('users',[UserController::class,'index']);
 
 Route :: view('about', 'about');
 
 Route::get('/contact', function () {
     return view('contact');
 });
-Route :: view('user', 'user')->middleware('protectedPages');
+
+Route :: view('user', 'user');
 Route :: view('home', 'home');
 Route :: view('noaccess', 'noaccess');
 
@@ -42,3 +47,6 @@ Route :: view('noaccess', 'noaccess');
 // Route::group(['middleware'=>['protectedPages']], function(){
 //     Route :: view('user', 'user');
 // });
+
+//Route middleware
+// Route :: view('user', 'user')->middleware('protectedPages');
