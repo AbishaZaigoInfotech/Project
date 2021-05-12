@@ -23,10 +23,11 @@ Route::get('/', function () {
 // Passing data with routing
 
 // Route::get('/{name}', function ($name) {
-//     return view('welcome', ['name'=>$name]);
+//     return view('welcome', ['name'=>$name]); 
 // });
 
-Route :: get('users',[Users::class,'viewLoad']);
+Route :: post('users',[Users::class,'getData']);
+Route :: view('login', 'users');
 
 Route :: view('about', 'about');
 

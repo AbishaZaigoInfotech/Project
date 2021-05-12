@@ -1,15 +1,7 @@
-@include('header')
-<h1>User Page</h1>
-@include('about')
-
-@foreach ($users as $item)
-<h3>{{$item}}</h3>
-@endforeach
-@include('footer')
-
-<!-- identifies the user is authenticated or not using this csrf token -->
+<h1>Login form</h1>
+<form action="users" method="POST">
 @csrf
-<script>
-var data=@json($users);
-console.warn(data);
-</script>
+<input type="text" name="name"><br><br>
+<input type="password" name="password"><br><br>
+<button type="submit">Login</button>
+</form>
