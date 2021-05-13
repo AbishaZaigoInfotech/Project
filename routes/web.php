@@ -28,10 +28,14 @@ Route::get('/', function () {
 //     return view('welcome', ['name'=>$name]); 
 // });
 
-// Route :: post('users',[Users::class,'index']);
+// Route :: post('users',[Users::class,'getData']);
 // Route :: view('login', 'users');
 
+// Route :: get('users',[Users::class,'getData']);
+
 Route :: get('users',[UserController::class,'index']);
+Route :: post('index',[UserController::class,'store'])->name('store');
+Route :: post('users',[UserController::class,'index'])->name('index');
 
 Route :: view('about', 'about');
 
@@ -39,9 +43,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route :: view('user', 'user');
-Route :: view('home', 'home');
-Route :: view('noaccess', 'noaccess');
+// Route :: view('user', 'user');
+// Route :: view('home', 'home');
+// Route :: view('noaccess', 'noaccess');
 
 // Grouped middleware
 // Route::group(['middleware'=>['protectedPages']], function(){
