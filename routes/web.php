@@ -33,9 +33,12 @@ Route::get('/', function () {
 
 // Route :: get('users',[Users::class,'getData']);
 
-Route :: get('users',[UserController::class,'index']);
-Route :: post('index',[UserController::class,'store'])->name('store');
-Route :: post('users',[UserController::class,'index'])->name('index');
+// Form data insertion in DB
+// Route :: get('users',[UserController::class,'index']);
+// Route :: post('index',[UserController::class,'store'])->name('store');
+// Route :: post('users',[UserController::class,'index'])->name('index');
+
+Route :: resource('users','App\Http\Controllers\UserController');
 
 Route :: view('about', 'about');
 
