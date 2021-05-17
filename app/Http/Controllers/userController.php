@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index(){
         // return DB::select("select * from users");
         // return User::all();
-        $users = User::latest()->paginate(5);
+        $users = User::orderBy('id','desc')->paginate(5);
         return view('users.index', compact('users'))
             ->with('i', (request()->input('page', 1)-1)*5);
     }
@@ -29,10 +29,19 @@ class UserController extends Controller
             'name'=>'required | regex:/^[a-zA-Z]/u',
             'email'=>'required | regex:/^[a-zA-Z0-9]+@[a-zA-Z]/u',
             'phone'=>'required | regex:/^[0-9]/u',
-            'password'=>'required | min:5'
+            'password'=>'required | min:5',
+            'image'=>'required | mimes:csv,txt,xlx,xls,pdf,jpg,gif | max:2048'
         ]);
 
-        User::create($request->all());
+        // User::create($request->all());
+        $path = $request->file('image')->store('public/images');
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = $request->password;
+        $user->image = $path;
+        $user->save();
 
         return redirect()->route('users.index')
                          ->with('success','Registered successfully');

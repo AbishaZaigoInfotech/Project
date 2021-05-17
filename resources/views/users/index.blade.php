@@ -26,6 +26,7 @@
         <th>Email id</th>
         <th>Phone number</th>
         <th>Password</th>
+        <th>Profile Image</th>
         <th width="280px">Action</th>
     </tr>
 
@@ -36,6 +37,7 @@
             <td>{{$user->email}}</td>
             <td>{{$user->phone}}</td>
             <td>{{$user->password}}</td>
+            <td>{{$user->profileimage}}</td>
             <td>
                 <form action="{{route('users.destroy', $user->id)}}" method="POST">
                     <a class="btn btn-info" href="{{route('users.show', $user->id)}}">Show</a>

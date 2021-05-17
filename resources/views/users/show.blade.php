@@ -17,34 +17,23 @@
 @csrf
 <div class="form-group">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            
-                <label>Name:</label>
-                <input type="text" name="name" value="{{$user->name}}" class="form-control" id="name" placeholder="Enter your name"/>
-                <span style="color:red">@error('name'){{$message}}@enderror</span>
-
+        <div class="col-xs-6 col-sm-6 col-md-6" align="center">Name:
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-
-                <label>Email:</label>
-                <input type="email" name="email" value="{{$user->email}}" class="form-control" id="email" placeholder="Enter your email id"/>
-                <span style="color:red">@error('email'){{$message}}@enderror</span>
-
+        <div class="col-xs-6 col-sm-6 col-md-6">{{$user->name}}
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-
-                <label>Phone No:</label>
-                <input type="tel" name="phone" value="{{$user->phone}}" class="form-control" id="phone" placeholder="Enter your phone number"/>
-                <span style="color:red">@error('phone'){{$message}}@enderror</span>
-
+        <div class="col-xs-6 col-sm-6 col-md-6" align="center">Email:
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-
-                <label>Password:</label>
-                <input type="password" name="password" value="{{$user->password}}" class="form-control" id="password" placeholder="Enter your password"/>
-                <span style="color:red">@error('password'){{$message}}@enderror</span>
-
+        <div class="col-xs-6 col-sm-6 col-md-6">{{$user->email}}
         </div>
+        <div class="col-xs-6 col-sm-6 col-md-6" align="center">Phone No:
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">{{$user->phone}}
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6" align="center">Password:
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">{{$user->password}}
+        </div>
+        <img src="{{ Storage::url($user->image) }}" height="200" width="200" alt="" />
     </div>
     </div>
 </form>

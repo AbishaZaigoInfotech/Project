@@ -6,6 +6,8 @@ use App\Http\Controllers\Users;
 
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\UploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +43,9 @@ Route::get('/', function () {
 Route :: resource('users','App\Http\Controllers\UserController');
 
 Route :: view('about', 'about');
+
+Route :: view('upload', ['upload']);
+Route :: post('upload', [UploadController::class,'index']);
 
 Route::get('/contact', function () {
     return view('contact');

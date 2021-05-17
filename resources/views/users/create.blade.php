@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<form action="{{route('users.store')}}" method="POST">
+<form action="{{route('users.store')}}" method="POST" enctype="multipart/form-data"> 
 @csrf
                     
                     <div class="row">
@@ -44,6 +44,10 @@
                             <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password"/>
                             <span style="color:red">@error('password'){{$message}}@enderror</span>
                         </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="image" class="form-control">
+                            <span style="color:red">@error('image'){{$message}}@enderror</span>
                         </div>
                         <div class="form-group col-md-12" align="center">
                             <button class="btn btn-success">SUBMIT</biutton>

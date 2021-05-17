@@ -45,6 +45,11 @@
                 <span style="color:red">@error('password'){{$message}}@enderror</span>
             </div>
         </div>
+        <div class="form-group">
+                            <input type="file" name="image" class="form-control"/>
+                            <img src="{{ Storage::url($user->image) }}" height="200" width="200" alt="" />
+                            <span style="color:red">@error('image'){{$message}}@enderror</span>
+                        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <button type="submit" class="btn btn-success">SUBMIT</button>
         </div>
