@@ -10,6 +10,8 @@ use App\Http\Controllers\UploadController;
 
 use App\Http\Controllers\UserAuth;
 
+use App\Http\Controllers\AccessorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +65,8 @@ Route :: get('/logout', function(){
     }
     return redirect('login');
 });
+
+Route::get('access',[AccessorController::class, 'index']);
 
 // Route :: view('upload', ['upload']);
 // Route :: post('upload', [UploadController::class,'index']);

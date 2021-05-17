@@ -11,4 +11,7 @@ class User extends Model
     protected $fillable = [
         'name', 'email', 'phone', 'password','image'
     ];
+    public function getNameAttribute($value){
+        return ucFirst($value);
+    }
 }
