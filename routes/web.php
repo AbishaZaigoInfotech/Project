@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\UploadController;
 
+use App\Http\Controllers\UserAuth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,16 +42,34 @@ Route::get('/', function () {
 // Route :: post('index',[UserController::class,'store'])->name('store');
 // Route :: post('users',[UserController::class,'index'])->name('index');
 
-Route :: resource('users','App\Http\Controllers\UserController');
+// Route :: resource('users','App\Http\Controllers\UserController');
 
-Route :: view('about', 'about');
+// Route :: view('about', 'about');
 
-Route :: view('upload', ['upload']);
-Route :: post('upload', [UploadController::class,'index']);
+Route :: post('user', [UserAuth::class,'userLogin']);
+Route :: view('login', 'login');
+Route :: view('profile', 'profile');
 
-Route::get('/contact', function () {
-    return view('contact');
+Route :: get('/login', function(){
+    if(session()->has('user')){
+        return redirect('profile');
+    }
+    return view('login');
 });
+
+Route :: get('/logout', function(){
+    if(session()->has('user')){
+        session()->pull('user');
+    }
+    return redirect('login');
+});
+
+// Route :: view('upload', ['upload']);
+// Route :: post('upload', [UploadController::class,'index']);
+
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
 
 // Route :: view('user', 'user');
 // Route :: view('home', 'home');

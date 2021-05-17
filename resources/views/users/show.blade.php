@@ -33,7 +33,8 @@
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">{{$user->password}}
         </div>
-        <img src="{{ Storage::url($user->image) }}" height="200" width="200" alt="" />
+        <!-- <img src="{{ Storage::url($user->image) }}" height="200" width="200" alt="" /> -->
+        <img src="{{$user->image}}" height="200" width="200" alt="" />
     </div>
     </div>
 </form>
