@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 Route::get('member',[MemberController::class,'index']); 
 
+
 // Passing data with routing
 
 // Route::get('/{name}', function ($name) {
