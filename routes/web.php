@@ -3,15 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Users;
-
 use App\Http\Controllers\UserController;
-
 use App\Http\Controllers\UploadController;
-
 use App\Http\Controllers\UserAuth;
-
 use App\Http\Controllers\AccessorController;
-
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +23,8 @@ Route::get('/', function () {
     return view('welcome');
     // return redirect('about');
 });
+
+Route::get('member',[MemberController::class,'index']); 
 
 // Passing data with routing
 

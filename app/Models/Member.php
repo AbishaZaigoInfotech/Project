@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Member extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'email', 'phone', 'password','image'
+        'qualification', 'users_id'
     ];  
-    public function getNameAttribute($value){
-        return ucFirst($value);
+    public function getCompany(){
+        return $this->hasOne('App\Models\Company');
     }
 }
+
