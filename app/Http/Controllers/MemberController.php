@@ -9,7 +9,7 @@ class MemberController extends Controller
 {
     //
     function index(){
-        $data= Member::all();
+        $data= Member::paginate(2);
         return view('list',['members'=>$data]);
     }
 }
