@@ -22,4 +22,3 @@ class Member extends Model
         $this->attributes['address']=$value. ", India ";
     }
 }
-
