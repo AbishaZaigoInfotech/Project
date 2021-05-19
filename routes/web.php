@@ -24,7 +24,7 @@ Route::get('/', function () {
     // return redirect('about');
 });
 
-Route::get('member',[MemberController::class,'index']); 
+Route::get('list',[MemberController::class,'index']); 
 
 
 // Passing data with routing

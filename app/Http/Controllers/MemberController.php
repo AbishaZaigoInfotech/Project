@@ -9,6 +9,7 @@ class MemberController extends Controller
 {
     //
     function index(){
-        return DB::table('members')->count('id');
+        $data= Member::all();
+        return view('list',['members'=>$data]);
     }
 }
